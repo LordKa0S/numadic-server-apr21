@@ -7,6 +7,8 @@ Run ```npm ci``` in the project directory.
 Ensure the environment variables ```PGHOST``` ```PGDATABASE``` ```PGUSER``` ```PGPASSWORD``` are set before running the server.
 Optionally, you may include a [.env](https://www.npmjs.com/package/dotenv#usage) file in the project directory.
 
+Refer [Postgres script for Numadic Full-Stack developer hiring](https://gist.github.com/LordKa0S/e70f052d03b5d25805efd90fa77d6fed) for DataBase setup and schema.
+
 ## Available Scripts
 
 In the project directory, you can run:
