@@ -17,14 +17,12 @@ const debug = getDebugger('numadic-server:place-interactions');
  *       name: start_tis
  *       schema:
  *         type: string
- *         format: date-time
  *         example: 2018-09-08T18%3A30%3A00.000Z
  *       description: The start timestamp for the time range
  *     - in: query
  *       name: end_tis
  *       schema:
  *         type: string
- *         format: date-time
  *       description: The end timestamp for the time range
  *   responses:
  *     200:
