@@ -9,7 +9,7 @@ const debug = getDebugger('numadic-server:place-interactions');
 
 /**
  * @openapi
- * /place-interactions:
+ * /place_interactions:
  *   get:
  *     description: Returns list of vehicles which were inside configured polygon for the select time range.
  *   parameters:

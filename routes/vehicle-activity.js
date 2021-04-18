@@ -8,7 +8,7 @@ const debug = getDebugger('numadic-server:vehicle-activity');
 
 /**
  * @openapi
- * /vehicle-activity:
+ * /vehicle_activity:
  *   get:
  *     description: Returns list of locations of vehicle for a selected time range.
  *   parameters:
