@@ -23,7 +23,7 @@ const debug = getDebugger('numadic-server:vehicle-activity');
  *       schema:
  *         type: string
  *         format: date-time
- *         example: 2018-09-08T18%3A30%3A00.000Z
+ *         example: 2018-09-08T18:30:00.000Z
  *       description: The start timestamp for the time range
  *     - in: query
  *       name: end_tis
