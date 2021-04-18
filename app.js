@@ -5,10 +5,10 @@ import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
-import swaggerJsdoc from 'swagger-jsdoc';
 
 import placeInteractionRouter from './routes/place-interactions.js';
 import vehicleActivityRouter from './routes/vehicle-activity.js';
+import openapiSpecification from './utils/open-api.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -20,36 +20,10 @@ app.set('json spaces', 2);
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(join(__dirname, 'public')));
-app.use(cors())
+app.use(cors());
 
 app.use('/place_interactions', placeInteractionRouter);
 app.use('/vehicle_activity', vehicleActivityRouter);
-
-const options = {
-    definition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'Express Server for Numadic Full-Stack developer hiring',
-            version: '1.0.0',
-            license: {
-                name: "MIT",
-                url: "https://github.com/LordKa0S/numadic-server-apr21/blob/master/LICENSE",
-            },
-            contact: {
-                name: "Kaustubh Badrike",
-                url: "https://github.com/LordKa0S/numadic-server-apr21",
-            },
-        },
-        servers: [
-            {
-                url: "https://numadic-apr21.herokuapp.com/",
-            },
-        ],
-    },
-    apis: ['./routes/*.js'],
-};
-
-const swaggerSpec = await swaggerJsdoc(options);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
 
 export default app;
