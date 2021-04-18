@@ -33,11 +33,11 @@ const options = {
             version: '1.0.0',
             license: {
                 name: "MIT",
-                url: "https://spdx.org/licenses/MIT.html",
+                url: "https://github.com/LordKa0S/numadic-server-apr21/blob/master/LICENSE",
             },
             contact: {
                 name: "Kaustubh Badrike",
-                url: "https://github.com/LordKa0S",
+                url: "https://github.com/LordKa0S/numadic-server-apr21",
             },
         },
         servers: [
@@ -46,10 +46,10 @@ const options = {
             },
         ],
     },
-    apis: ['./routes*.js'], // files containing annotations as above
+    apis: ['./routes/*.js'],
 };
 
 const swaggerSpec = await swaggerJsdoc(options);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 export default app;
