@@ -3,7 +3,9 @@ import getDebugger from './debug.js';
 
 const { Pool } = pg;
 
-const pool = new Pool();
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+});
 
 const debug = getDebugger('numadic-server:postgres');
 
@@ -11,7 +13,7 @@ export const executeQuery = async (
     queryText,
     values,
 ) => {
-    debug(process.env.PGHOST);
+    debug(process.env.DATABASE_URL);
     const queryArray = await pool.query(queryText, values);
     return queryArray.rows;
 }
